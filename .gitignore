@@ -1,0 +1,9 @@
+# Personal data: never commit
+data/
+workspace/
+demo-data/
+docs/screenshots/frames/
+
+__pycache__/
+*.pyc
+.DS_Store

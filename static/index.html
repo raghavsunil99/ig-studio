@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>IG Studio by Raghav</title>
+<script>
+  // Apply the saved theme before first paint (also ?theme=light|dark for screenshots).
+  (function () {
+    var q = new URLSearchParams(location.search).get("theme"), t;
+    try { t = q || localStorage.getItem("igs:theme"); } catch (e) { t = q; }
+    if (t === "light" || t === "dark") document.documentElement.dataset.theme = t;
+  })();
+</script>
+<link rel="stylesheet" href="style.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/marked/12.0.2/marked.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/3.1.6/purify.min.js"></script>
+</head>
+<body>
+<div class="shell">
+  <aside class="side">
+    <div class="brand"><span class="logo"></span>IG Studio</div>
+    <div class="by">by Raghav</div>
+    <div id="status" class="status">Checking Claude Code…</div>
+    <nav id="nav"></nav>
+    <div class="theme" role="group" aria-label="Theme">
+      <button data-theme-set="light">Light</button><button data-theme-set="dark">Dark</button><button data-theme-set="system">System</button>
+    </div>
+  </aside>
+  <main class="main">
+    <header class="head">
+      <div>
+        <h1 id="title"></h1>
+        <p id="blurb" class="muted"></p>
+      </div>
+      <span id="badge" class="badge"></span>
+    </header>
+    <section id="form" class="card"></section>
+    <section id="out" class="out" hidden></section>
+    <footer class="credit"><strong>IG Studio</strong> · built by Raghav</footer>
+  </main>
+</div>
+<script src="app.js"></script>
+</body>
+</html>
